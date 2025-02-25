@@ -1,0 +1,42 @@
+groups:
+  - name: HighLatencyHighErrorRate
+    rules:
+      - alert: HighRequestLatency
+        expr: flask_http_request_duration_seconds{method="GET", endpoint="/four"} > 0.2
+        for: 10s
+        labels:
+          severity: warning
+        annotations:
+          summary: "High request latency detected (instance {{ $labels.instance }})"
+          description: "GET requests to /four are taking longer than 0.2 seconds for more than 10 seconds."
+
+      - alert: HighErrorRate
+        expr: rate(flask_http_requests_total{status=~"5.."}[5m]) > 0.1
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected (instance {{ $labels.instance }})"
+          description: "More than 10% of requests are failing with 5xx errors over the last 5 minutes."
+
+  - name: response_time_alerts
+    rules:
+      - alert: HighResponseTime
+        expr: flask_http_request_duration_seconds{job="flask_app"} > 0.5
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High response time detected"
+          description: "The response time for {{ $labels.endpoint }} is {{ $value }} seconds, which exceeds the threshold of 0.5 seconds."
+  
+  - name: app_down
+    rules:
+      - alert: NodeDown
+        expr: up == 0
+        for: 3s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Target app DOWN!"
+          description: Node {{ $labels.instance }} has been down for more than 3s.
