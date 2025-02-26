@@ -81,7 +81,7 @@ Avec prometheus_client
    Note : "The generate_latest() function is a core utility provided by the prometheus_client library to help expose metrics in a format that Prometheus can consume."
 
 
-**Pour aller plus loin :**
+**Ressources :**
 
 Doc et exemple Prometheus :
    - https://prometheus.io/docs/introduction/first_steps/
@@ -90,6 +90,9 @@ Doc et exemple Prometheus :
 Très bon blog sur flask_exporter :
 
 https://blog.viktoradam.net/2020/05/11/prometheus-flask-exporter/
+
+Créer un dashboard Grafana :
+   - https://grafana.com/docs/grafana/latest/getting-started/build-first-dashboard/
 
 
 Des collections d'alertes :
