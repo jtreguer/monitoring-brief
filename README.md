@@ -67,6 +67,7 @@ Avec prometheus_client
    Démonstration de configuration de Prometheus et Grafana directement dans leur interface (data source / dashboard)
 
 **Petit rendu :**
+0. Votre propre code de monitoring venant de votre projet
 1. Avec prometheus_flask_exporter
    1. Copier le répertoire de l'exemple 3
    2. Ajouter une nouvelle route ou modifier une route existante dans l'app pour qu'elle réponde aléatoirement avec un code 200 (OK), 500 (pas de réponse serveur) ou 404 (fichier non trouvé)
@@ -83,8 +84,13 @@ Avec prometheus_client
 **Pour aller plus loin :**
 
 Doc et exemple Prometheus :
-https://prometheus.io/docs/introduction/first_steps/
-https://github.com/warpnet/awesome-prometheus
+   - https://prometheus.io/docs/introduction/first_steps/
+   - https://github.com/warpnet/awesome-prometheus
+
+Très bon blog sur flask_exporter :
+
+https://blog.viktoradam.net/2020/05/11/prometheus-flask-exporter/
+
 
 Des collections d'alertes :
     - https://www.squadcast.com/blog/prometheus-sample-alert-rules#prometheus-sample-alert-rules

@@ -1,5 +1,5 @@
 from flask import Flask
-from prometheus_client import Counter, make_wsgi_app #, generate_latest, Gauge, Histogram, Summary
+from prometheus_client import Counter, make_wsgi_app, generate_latest, CONTENT_TYPE_LATEST #, Gauge, Histogram, Summary
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 app = Flask(__name__)
@@ -25,11 +25,12 @@ def hello():
     # Simulate latency
    #  with REQUEST_LATENCY.time():
    #      return "Welcome to the Flask App
+    return "Welcome to this humble flask app!"
 
-# @app.route('/metrics')
-# def metrics():
-#     # Expose the metrics to Prometheus
-#     return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}
+@app.route('/metrics')
+def metrics():
+    # Expose the metrics to Prometheus
+    return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}
 
 # @app.route('/active_users/<int:count>')
 # def update_active_users(count):
