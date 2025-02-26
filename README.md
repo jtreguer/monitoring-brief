@@ -64,8 +64,10 @@ Avec prometheus_flask_exporter
 3. Flask + Gunicorn + Alerter (/sample-signals-gunicorn-alerter)
 
 Avec prometheus_client
+
 4. Flask + Gunicorn (/prometheus-client-example)
-   Démonstration de configuration de Prometheus et Grafana directement dans leur interface (data source / dashboard)
+
+   -> Démonstration de configuration de Prometheus et Grafana directement dans leur interface (data source / dashboard)
 
 **Petit rendu :**
 0. Votre propre code de monitoring venant de votre projet
