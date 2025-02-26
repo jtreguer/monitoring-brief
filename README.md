@@ -59,11 +59,11 @@ Différence entre prometheus_client et prometheus_flask_exporter :
       - Expose automatiquement /metrics
 
 Avec prometheus_flask_exporter
-1- Flask seul (/sample-signals)
-2- Flask + Gunicorn (/sample-signals-gunicorn)
-3- Flask + Gunicorn + Alerter (/sample-signals-gunicorn-alerter)
+1. Flask seul (/sample-signals)
+2. Flask + Gunicorn (/sample-signals-gunicorn)
+3. Flask + Gunicorn + Alerter (/sample-signals-gunicorn-alerter)
 Avec prometheus_client
-4 - Flask + Gunicorn (/prometheus-client-example)
+4. Flask + Gunicorn (/prometheus-client-example)
    Démonstration de configuration de Prometheus et Grafana directement dans leur interface (data source / dashboard)
 
 **Petit rendu :**
